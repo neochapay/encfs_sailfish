@@ -42,16 +42,8 @@ filesystem.
 
 %build
 
-##some debug info
-echo ===== build ============
-##echo %{_bindir}
-##echo %{_includedir}
-##echo %{_mandir}
-##echo %{_libdir}
-##echo ========================
-
 %install
-echo ===== install ==========
+
 mkdir %{buildroot}%{_usr}
 tar -xf ./INSTALL/%{name}-%{version}.%{release}.tar -C %{buildroot}%{_usr}
 
@@ -63,12 +55,6 @@ rm -rf %{buildroot}
 %{_bindir}/encfs
 %{_bindir}/encfsctl
 %{_bindir}/encfssh
-
-## library not needed
-##%{_includedir}/tinyxml2.h
-##%{_libdir}/libencfs.a
-##%{_libdir}/libtinyxml2.a
-##%{_libdir}/pkgconfig/tinyxml2.pc
 
 %doc
 %defattr(-,root,root,-)
